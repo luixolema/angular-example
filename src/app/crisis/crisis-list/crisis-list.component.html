@@ -1,0 +1,17 @@
+<router-outlet></router-outlet>
+
+<h2>Crises:</h2>
+<ul class="crisis">
+  <li
+    *ngFor="let crisis of crises$ | async"
+    [class.selected]="crisis.id === selectedId"
+    [routerLink]="['/crisis-center', crisis.id]"
+    (click)="onSelect(crisis)"
+  >
+    <span class="badge">{{ crisis.id }}</span
+    >{{ crisis.name }}
+  </li>
+</ul>
+
+
+
